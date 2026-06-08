@@ -171,3 +171,5 @@ func ComputeETag(data []byte) string {
 func JoinParts(partsData [][]byte) []byte {
 	return bytes.Join(partsData, nil)
 }
+
+# refactor: simplify data models logic and remove duplication
