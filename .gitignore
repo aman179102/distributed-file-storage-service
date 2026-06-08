@@ -1,0 +1,66 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+distributed-file-storage-service
+/tmp/
+*.test
+*.out
+*.test.exe
+
+# Go
+*.o
+*.a
+*.prof
+*.cov
+*.out
+vendor/
+go.work
+go.work.sum
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.settings/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# Test output
+/coverage/
+/coverage.out
+/coverage.html
+*.coverprofile
+profile.cov
+
+# Build artifacts
+/build/
+/dist/
+/release/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Logs
+*.log
+/logs/
+
+# Data
+/data/storage/*
+!/data/storage/.gitkeep

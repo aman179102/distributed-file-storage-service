@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: filestore-ingress
+  namespace: filestore
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "5120m"
+    nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, OPTIONS, HEAD"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, Authorization, Range, X-Request-ID"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: storage.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: filestore
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - storage.example.com
+      secretName: filestore-tls

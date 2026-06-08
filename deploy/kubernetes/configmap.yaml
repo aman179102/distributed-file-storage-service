@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filestore-config
+  namespace: filestore
+data:
+  SERVER_HOST: "0.0.0.0"
+  SERVER_PORT: "8080"
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  DB_USER: "filestore"
+  DB_NAME: "filestore"
+  DB_SSLMODE: "disable"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  METRICS_ENABLED: "true"
+  STORAGE_DATA_DIR: "/data/storage"
+  STORAGE_TEMP_DIR: "/tmp/filestore"
+  STORAGE_CHUNK_SIZE_MB: "64"
+  STORAGE_REPLICATION_FACTOR: "3"
+  STORAGE_DATA_SHARDS: "4"
+  STORAGE_PARITY_SHARDS: "2"
+  LOG_LEVEL: "info"
+  LOG_FORMAT: "json"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: filestore-secrets
+  namespace: filestore
+type: Opaque
+stringData:
+  DB_PASSWORD: "filestore"
+  REDIS_PASSWORD: ""
+  AUTH_JWT_SECRET: "change-me-in-production-please"
+  AUTH_DEFAULT_ADMIN_PASSWORD: "admin123"
