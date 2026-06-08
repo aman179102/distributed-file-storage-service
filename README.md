@@ -19,9 +19,7 @@
 <br>
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400/1a1a2e/e94560?text=📸+Hero+Image+-+Screenshot+Coming+Soon" alt="Hero Screenshot" width="800">
-  <br>
-  <i>(Add your hero image here — see prompt below)</i>
+  <img src="assets/hero.png" alt="Hero Screenshot" width="800">
 </p>
 
 ---
