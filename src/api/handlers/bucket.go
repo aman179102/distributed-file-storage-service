@@ -163,3 +163,5 @@ func (h *BucketHandler) SetVersioning(w http.ResponseWriter, r *http.Request) {
 
 	api.WriteJSON(w, http.StatusOK, map[string]string{"message": "versioning updated"})
 }
+
+# docs: add docstrings to load testing module
